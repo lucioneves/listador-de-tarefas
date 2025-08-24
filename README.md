@@ -1,12 +1,38 @@
-# React + Vite
+🔍 ESLint
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- O ESLint é uma ferramenta de análise de código estática que ajuda a identificar e corrigir problemas no JavaScript/TypeScript.
+  Ele garante boas práticas e evita erros comuns, como:
 
-Currently, two official plugins are available:
+# Uso de variáveis não declaradas;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Importações não utilizadas;
 
-## Expanding the ESLint configuration
+- Problemas de acessibilidade em componentes React;
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Regras de consistência (ex: ordem de imports, padrão de funções, etc.).
+
+- Com isso, o código se mantém mais limpo, seguro e padronizado para toda a equipe.
+
+🎨 Prettier
+
+- O Prettier é um formatador de código automático.
+  Ele cuida da estética do código, aplicando um estilo consistente, como:
+
+- Quebra de linhas;
+
+- Espaçamento;
+
+- Aspas simples ou duplas;
+
+- Vírgulas no final de objetos e arrays;
+
+- Ponto e vírgula (ou não) no fim das instruções.
+
+- Isso garante que todos os desenvolvedores sigam o mesmo padrão visual, sem perder tempo discutindo estilo de código.
+
+⚡ Juntos
+
+- O ESLint cuida da qualidade e boas práticas;
+
+- O Prettier cuida da formatação automática.
+

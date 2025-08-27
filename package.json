@@ -21,12 +21,30 @@
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "git-commit-msg-linter": "^5.0.8",
     "globals": "^16.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
     "prettier": "^3.6.2",
     "vite": "^5.2.0"
+  },
+  "config": {
+    "git-commit-msg-linter": {
+      "pattern": "^(feat|fix|docs|style|refactor|test|chore)(\\(.+\\))?: .{1,50}",
+      "errorMsg": "⚠️ Mensagem inválida! Use: <type>(<scope>): <message>"
+    }
+  },
+  "lint-staged": {
+    "*.jsx": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

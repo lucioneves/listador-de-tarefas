@@ -1,5 +1,4 @@
-const { rules } = require('eslint-config-prettier')
-const { env } = require('process')
+const prettier = require('eslint-config-prettier')
 
 module.exports = {
   root: true,
@@ -8,11 +7,12 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:react-hook/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier',
   ],
-  ignorePatters: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 11, sourceType: 'module' },
-  settigs: { react: { version: '18.2' } },
+  settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
     'react/jsx-no-target-blank': 'off',

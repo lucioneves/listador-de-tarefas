@@ -1,28 +1,28 @@
 const Button = ({
   children,
-  variant = 'primary',
-  size = 'small',
+  variant = "primary",
+  size = "small",
   className,
   ...rest
 }) => {
   const getVariantClasses = () => {
-    if (variant == 'primary') {
-      return 'bg-[#00ADB5] text-white'
+    if (variant == "primary") {
+      return "bg-brand-primary text-white"
     }
-    if (variant == 'ghost') {
-      return 'bg-transparent text-[#818181]'
+    if (variant == "ghost") {
+      return "bg-transparent text-brand-dark-gray"
     }
-    if (variant === 'secondary') {
-      return 'bg-[#EEEEEE] text-[#35383E]'
+    if (variant === "secondary") {
+      return "bg-brand-light-gray text-brand-dark-blue"
     }
   }
 
   const getSizeClasses = () => {
-    if (size === 'small') {
-      return 'py-1 text-xs'
+    if (size === "small") {
+      return "py-1 text-xs"
     }
-    if (size === 'large') {
-      return 'py-2 text-sm'
+    if (size === "large") {
+      return "py-2 text-sm"
     }
   }
   return (

@@ -1,18 +1,18 @@
-import { CheckIcon, DetailsIcon, LoaderIcon, TrashIcon } from '../assets/icons'
-import Button from './Button'
+import { CheckIcon, DetailsIcon, LoaderIcon, TrashIcon } from "../assets/icons"
+import Button from "./Button"
 
 const TaskItem = ({ task, handlekCheckboxClick, handleDeleteClick }) => {
   const getStatusClasses = () => {
-    if (task.status === 'done') {
-      return 'bg-[#00ADB5] text-[#00ADB5]'
+    if (task.status === "done") {
+      return "bg-brand-primary text-brand-primary"
     }
 
-    if (task.status === 'in-progress') {
-      return 'bg-[#FFAA04] text-[#FFAA04]'
+    if (task.status === "in-progress") {
+      return "bg-brand-process text-brand-process"
     }
 
-    if (task.status === 'not-started') {
-      return 'bg-[#35383E] bg-opacity-10 text-[#35383E]'
+    if (task.status === "not-started") {
+      return "bg-brand-dark-blue bg-opacity-10 text-brand-dark-blue"
     }
   }
 
@@ -26,12 +26,12 @@ const TaskItem = ({ task, handlekCheckboxClick, handleDeleteClick }) => {
         >
           <input
             type="checkbox"
-            checked={task.status === 'done'}
+            checked={task.status === "done"}
             className="absolute h-full w-full cursor-pointer opacity-0"
             onChange={() => handlekCheckboxClick(task.id)}
           />
-          {task.status === 'done' && <CheckIcon />}
-          {task.status === 'in-progress' && (
+          {task.status === "done" && <CheckIcon />}
+          {task.status === "in-progress" && (
             <LoaderIcon className="animate-spin" />
           )}
         </label>
@@ -39,7 +39,7 @@ const TaskItem = ({ task, handlekCheckboxClick, handleDeleteClick }) => {
       </div>
       <div className="flex items-center gap-2">
         <Button variant="ghost" onClick={() => handleDeleteClick(task.id)}>
-          <TrashIcon className="text-[#9A9C9F]" />
+          <TrashIcon className="text-brand-text-gray" />
         </Button>
 
         <a href="#" className="transition hover:opacity-75">

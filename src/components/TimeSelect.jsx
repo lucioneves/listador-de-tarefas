@@ -1,7 +1,7 @@
-import { forwardRef } from 'react'
+import { forwardRef } from "react"
 
-import InputErrorMessage from './InputErrorMessage'
-import InputLabel from './InputLabel'
+import InputErrorMessage from "./InputErrorMessage"
+import InputLabel from "./InputLabel"
 
 const TimeSelect = forwardRef((props, ref) => {
   return (
@@ -9,7 +9,7 @@ const TimeSelect = forwardRef((props, ref) => {
       <InputLabel htmlFor="time">Horário</InputLabel>
       <select
         id="time"
-        className="rounded-lg border border-solid border-[#ECECEC] px-4 py-3 outline-[#00ADB5] placeholder:text-sm placeholder:text-[#9A9C9F]"
+        className="rounded-lg border border-solid border-brand-border px-4 py-3 outline-brand-primary placeholder:text-sm placeholder:text-brand-text-gray"
         {...props}
         ref={ref}
       >
@@ -24,5 +24,5 @@ const TimeSelect = forwardRef((props, ref) => {
   )
 })
 
-TimeSelect.displayName = 'TimeSelect'
+TimeSelect.displayName = "TimeSelect"
 export default TimeSelect

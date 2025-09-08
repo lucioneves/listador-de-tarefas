@@ -42,9 +42,9 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
         message: 'Descrição é obrigatória',
       })
     }
+    setErrors(newErrors)
 
     if (newErrors.length > 0) {
-      setErrors(newErrors)
       return
     }
 

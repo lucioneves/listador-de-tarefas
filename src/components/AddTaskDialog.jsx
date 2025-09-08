@@ -1,6 +1,6 @@
 import './AddTaskDialog.css'
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { CSSTransition } from 'react-transition-group'
 import { v4 } from 'uuid'
@@ -10,23 +10,19 @@ import Input from './Input'
 import TimeSelect from './TimeSelect'
 
 const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
-  const [title, setTitle] = useState('')
-  const [time, setTime] = useState('morning')
-  const [description, setDescription] = useState('')
   const [errors, setErrors] = useState([])
 
   const nodeRef = useRef()
-
-  useEffect(() => {
-    if (!isOpen) {
-      setTitle('')
-      setTime('morning')
-      setDescription('')
-    }
-  }, [isOpen])
+  const timeRef = useRef()
+  const descriptionRef = useRef()
+  const titleRef = useRef()
 
   const handleSaveClick = () => {
     const newErrors = []
+
+    const title = titleRef.current.value
+    const time = timeRef.current.value
+    const description = descriptionRef.current.value
 
     if (!title.trim()) {
       newErrors.push({ inputName: 'title', message: 'Título é obrigatório' })
@@ -91,24 +87,18 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
                   id="title"
                   label="Título"
                   placeholder="Título da tarefa"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
+                  ref={titleRef}
                   errorMessage={titleError?.message}
                 />
 
-                <TimeSelect
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                  errorMessage={timeError?.message}
-                />
+                <TimeSelect ref={timeRef} errorMessage={timeError?.message} />
 
                 <Input
                   id="description"
                   label="Descrição"
                   size="large"
                   placeholder="Descreva a tarefa"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
+                  ref={descriptionRef}
                   errorMessage={descriptionError?.message}
                 />
 

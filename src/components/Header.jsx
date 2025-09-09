@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 
 function Header(props) {
-  return <header className="headre">{props.children}</header>
+  return <header className="header">{props.children}</header>
 }
 
 Header.propTypes = {

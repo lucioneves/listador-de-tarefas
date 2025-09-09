@@ -1,45 +1,59 @@
 {
   "tasks": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Estudar React",
       "description": "Estudar os conceitos básicos do React",
       "time": "morning",
       "status": "done"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Ler um livro",
       "description": "Ler um livro sobre desenvolvimento web",
       "time": "morning",
       "status": "done"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Jogar bola",
       "description": "Assistir ao jogo do meu time",
       "time": "afternoon",
       "status": "in-progress"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Ir à academia",
       "description": "Treinar pernas e abdômen",
       "time": "afternoon",
       "status": "in-progress"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Meditar",
       "description": "Meditar por 20 minutos",
       "time": "evening",
       "status": "not-started"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Jantar com amigos",
       "description": "Reservar mesa no restaurante",
       "time": "evening",
+      "status": "not-started"
+    },
+    {
+      "id": "50cbfd24-e58a-4c94-a24a-418c72b76b2a",
+      "title": "tettste",
+      "time": "morning",
+      "description": "teste",
+      "status": "not-started"
+    },
+    {
+      "id": "27924dcf-9bcf-4f46-bbb6-33b19ae5e52a",
+      "title": "testando",
+      "time": "morning",
+      "description": "tristeza",
       "status": "not-started"
     }
   ]

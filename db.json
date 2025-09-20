@@ -2,9 +2,23 @@
   "tasks": [
     {
       "id": "02a7f5e7-8612-464c-b41c-8654fd98751b",
-      "title": "Titudo do litro",
+      "title": "Tette",
+      "time": "morning",
+      "description": "tetse le",
+      "status": "not-started"
+    },
+    {
+      "id": "8c228bf2-2b4c-436c-a45c-af9c989efce9",
+      "title": "Festa Junina",
       "time": "afternoon",
-      "description": "Troa",
+      "description": "Hoje vai ter o melhor arraiu do Bairro",
+      "status": "not-started"
+    },
+    {
+      "id": "a028289b-b3d7-41c4-8430-088b76b870d4",
+      "title": "Futebol",
+      "time": "evening",
+      "description": "Futebol ao vivo na CazeTv para todo o Brasil no YouTobe",
       "status": "not-started"
     }
   ]

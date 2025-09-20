@@ -23,7 +23,13 @@ const AddTaskDialog = ({
     formState: { errors, isSubmitting },
     handleSubmit,
     reset,
-  } = useForm()
+  } = useForm({
+    defaultValues: {
+      title: "",
+      time: "morning",
+      description: "",
+    },
+  })
 
   const nodeRef = useRef()
 
@@ -50,6 +56,15 @@ const AddTaskDialog = ({
       time: "morning",
       description: "",
     })
+  }
+
+  const handleCancelClick = () => {
+    reset({
+      title: "",
+      time: "morning",
+      description: "",
+    })
+    handleClose()
   }
 
   return (
@@ -81,6 +96,8 @@ const AddTaskDialog = ({
                 <Input
                   id="title"
                   label="Título"
+                  errorMessage={errors?.title?.message}
+                  disabled={isSubmitting}
                   placeholder="Título da tarefa"
                   {...register("title", {
                     required: "O título é obrigatório",
@@ -91,8 +108,6 @@ const AddTaskDialog = ({
                       return true
                     },
                   })}
-                  errorMessage={errors?.title?.message}
-                  disabled={isSubmitting}
                 />
 
                 <TimeSelect
@@ -124,7 +139,7 @@ const AddTaskDialog = ({
                     size="large"
                     className="w-full"
                     color="secondary"
-                    onClick={handleClose}
+                    onClick={handleCancelClick}
                     type="button"
                   >
                     Cancelar

@@ -1,25 +1,3 @@
 {
-  "tasks": [
-    {
-      "id": "c73d5e2c-b076-40cd-8937-b5dd108ae702",
-      "title": "titlo'''",
-      "time": "morning",
-      "description": "bteee",
-      "status": "not-started"
-    },
-    {
-      "id": "210d120c-2208-4033-9d19-1b9952d7f175",
-      "title": "tuitggk",
-      "time": "morning",
-      "description": "wwde",
-      "status": "not-started"
-    },
-    {
-      "id": "1a3b71a4-66a6-4819-b362-c4990d691426",
-      "title": "RTÇQW",
-      "time": "morning",
-      "description": "WWW",
-      "status": "not-started"
-    }
-  ]
+  "tasks": []
 }

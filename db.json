@@ -1,18 +1,3 @@
 {
-  "tasks": [
-    {
-      "id": "c27b6f5c-da39-454d-9c19-6d76bb958d8c",
-      "title": "Arrombado",
-      "time": "morning",
-      "description": "kejlydoqtwiwddeder",
-      "status": "not-started"
-    },
-    {
-      "id": "55576de4-eae6-4dec-bd8c-052ad75c084e",
-      "title": "cueggee",
-      "time": "evening",
-      "description": "loe]ép",
-      "status": "not-started"
-    }
-  ]
+  "tasks": []
 }

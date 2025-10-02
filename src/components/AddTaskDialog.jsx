@@ -146,9 +146,7 @@ const AddTaskDialog = ({ isOpen, handleClose }) => {
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting && (
-                      <LoaderIcon className="animate-spin text-brand-process" />
-                    )}
+                    {isSubmitting && <LoaderIcon className="animate-spin" />}
                     Salvar
                   </Button>
                 </div>

@@ -50,7 +50,7 @@ const TaskItem = ({ task, handlekCheckboxClick }) => {
           />
           {task.status === "done" && <CheckIcon />}
           {task.status === "in-progress" && (
-            <LoaderIcon className="animate-spin" />
+            <LoaderIcon className="animate-spin text-brand-white" />
           )}
         </label>
         {task.title}
@@ -58,7 +58,7 @@ const TaskItem = ({ task, handlekCheckboxClick }) => {
       <div className="flex items-center gap-2">
         <Button color="ghost" onClick={handleDeleteClick} disabled={isPending}>
           {isPending ? (
-            <LoaderIcon className="animate-spin text-brand-text-gray" />
+            <LoaderIcon className="animate-spin" />
           ) : (
             <TrashIcon className="text-brand-text-gray" />
           )}

@@ -4,10 +4,15 @@ import { toast } from "sonner"
 
 import { CheckIcon, DetailsIcon, LoaderIcon, TrashIcon } from "../assets/icons"
 import { useDeleteTask } from "../hooks/data/use-delete-task"
+import { useUpdateTask } from "../hooks/data/use-update-task"
 import Button from "./Button"
 
-const TaskItem = ({ task, handlekCheckboxClick }) => {
-  const { mutate: deleteTask, isPending } = useDeleteTask(task.id)
+const TaskItem = ({ task }) => {
+  const { mutate: deleteTask, isPending: deleteTaskIsLoading } = useDeleteTask(
+    task.id
+  )
+
+  const { mutate } = useUpdateTask(task.id)
 
   const handleDeleteClick = async () => {
     deleteTask(undefined, {
@@ -34,6 +39,30 @@ const TaskItem = ({ task, handlekCheckboxClick }) => {
     }
   }
 
+  const getNewStatus = () => {
+    if (task.status == "not-started") {
+      return "in-progress"
+    }
+    if (task.status == "in-progress") {
+      return "done"
+    }
+    return "not-started"
+  }
+
+  const handleCheckboxClick = () => {
+    mutate(
+      { status: getNewStatus() },
+      {
+        onSuccess: () => {
+          toast.success("Tarefa atualizada com sucesso!")
+        },
+        onError: () => {
+          toast.error("Erro ao atualizar tarefa!")
+        },
+      }
+    )
+  }
+
   return (
     <div
       className={`flex items-center justify-between gap-2 rounded-lg bg-opacity-10 px-4 py-3 text-sm transition ${getStatusClasses()}`}
@@ -46,7 +75,7 @@ const TaskItem = ({ task, handlekCheckboxClick }) => {
             type="checkbox"
             checked={task.status === "done"}
             className="absolute h-full w-full cursor-pointer opacity-0"
-            onChange={() => handlekCheckboxClick(task.id)}
+            onChange={handleCheckboxClick}
           />
           {task.status === "done" && <CheckIcon />}
           {task.status === "in-progress" && (
@@ -56,8 +85,12 @@ const TaskItem = ({ task, handlekCheckboxClick }) => {
         {task.title}
       </div>
       <div className="flex items-center gap-2">
-        <Button color="ghost" onClick={handleDeleteClick} disabled={isPending}>
-          {isPending ? (
+        <Button
+          color="ghost"
+          onClick={handleDeleteClick}
+          disabled={deleteTaskIsLoading}
+        >
+          {deleteTaskIsLoading ? (
             <LoaderIcon className="animate-spin" />
           ) : (
             <TrashIcon className="text-brand-text-gray" />

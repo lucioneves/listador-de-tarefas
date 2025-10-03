@@ -5,21 +5,21 @@
       "title": "SX",
       "time": "morning",
       "description": "SSS",
-      "status": "not-started"
+      "status": "done"
     },
     {
       "id": "ac39d4eb-fbe5-4e33-bc92-fd9a4b40b99b",
       "title": "YTAESS",
       "time": "morning",
       "description": "WSWDSD",
-      "status": "not-started"
+      "status": "in-progress"
     },
     {
       "id": "de29fdd4-b3e4-4824-bda3-e30db4075c9d",
       "title": "WDQQD",
       "time": "morning",
       "description": "WDWDWD",
-      "status": "not-started"
+      "status": "in-progress"
     }
   ]
 }

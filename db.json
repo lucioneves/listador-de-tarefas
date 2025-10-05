@@ -5,21 +5,28 @@
       "title": "SX",
       "time": "morning",
       "description": "SSS",
-      "status": "done"
+      "status": "in-progress"
     },
     {
       "id": "ac39d4eb-fbe5-4e33-bc92-fd9a4b40b99b",
       "title": "YTAESS",
       "time": "morning",
       "description": "WSWDSD",
-      "status": "in-progress"
+      "status": "done"
     },
     {
       "id": "de29fdd4-b3e4-4824-bda3-e30db4075c9d",
       "title": "WDQQD",
       "time": "morning",
       "description": "WDWDWD",
-      "status": "in-progress"
+      "status": "done"
+    },
+    {
+      "id": "7f162a63-820e-450c-a437-a22f0aa4ef9f",
+      "title": "testre",
+      "time": "evening",
+      "description": "eeef",
+      "status": "not-started"
     }
   ]
 }

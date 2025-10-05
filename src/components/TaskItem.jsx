@@ -14,17 +14,6 @@ const TaskItem = ({ task }) => {
 
   const { mutate } = useUpdateTask(task.id)
 
-  const handleDeleteClick = async () => {
-    deleteTask(undefined, {
-      onSuccess: () => {
-        toast.success("tarefa deletada com sucesso!")
-      },
-      onError: () => {
-        toast.error("Erro ao deletar tarefa!")
-      },
-    })
-  }
-
   const getStatusClasses = () => {
     if (task.status === "done") {
       return "bg-brand-primary text-brand-primary"
@@ -35,15 +24,26 @@ const TaskItem = ({ task }) => {
     }
 
     if (task.status === "not-started") {
-      return "bg-brand-dark-blue bg-opacity-10 text-brand-dark-blue"
+      return "bg-brand-dark-blue bg-opacity-5 text-brand-dark-blue"
     }
   }
 
+  const handleDeleteClick = () => {
+    deleteTask(undefined, {
+      onSuccess: () => {
+        toast.success("tarefa deletada com sucesso!")
+      },
+      onError: () => {
+        toast.error("Erro ao deletar tarefa!")
+      },
+    })
+  }
+
   const getNewStatus = () => {
-    if (task.status == "not-started") {
+    if (task.status === "not-started") {
       return "in-progress"
     }
-    if (task.status == "in-progress") {
+    if (task.status === "in-progress") {
       return "done"
     }
     return "not-started"
@@ -53,12 +53,9 @@ const TaskItem = ({ task }) => {
     mutate(
       { status: getNewStatus() },
       {
-        onSuccess: () => {
-          toast.success("Tarefa atualizada com sucesso!")
-        },
-        onError: () => {
-          toast.error("Erro ao atualizar tarefa!")
-        },
+        onSuccess: () => toast.success("Tarefa atualizada com sucesso!"),
+
+        onError: () => toast.error("Erro ao atualizar tarefa!"),
       }
     )
   }
@@ -112,7 +109,7 @@ TaskItem.propTypes = {
     description: PropTypes.string.isRequired,
     status: PropTypes.oneOf(["not-started", "in-progress", "done"]).isRequired,
   }).isRequired,
-  handlekCheckboxClick: PropTypes.func.isRequired,
+  handleCheckboxClick: PropTypes.func.isRequired,
   handleDeleteClick: PropTypes.func.isRequired,
 }
 

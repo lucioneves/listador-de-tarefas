@@ -32,25 +32,29 @@ const AddTaskDialog = ({ isOpen, handleClose }) => {
   const nodeRef = useRef()
 
   const handleSaveClick = async (data) => {
-    const task = {
-      id: v4(),
-      title: data.title.trim(),
-      time: data.time.trim(),
-      description: data.description.trim(),
-      status: "not-started",
-    }
-
-    addTask(task, {
-      onSuccess: () => {
-        handleClose()
-        reset({
-          title: "",
-          time: "morning",
-          description: "",
-        })
+    addTask(
+      {
+        id: v4(),
+        title: data.title.trim(),
+        time: data.time,
+        description: data.description.trim(),
+        status: "not_started",
       },
-      onError: () => toast.error("Erro ao adicionar tarefa."),
-    })
+      {
+        onSuccess: () => {
+          handleClose()
+          reset({
+            title: "",
+            time: "morning",
+            description: "",
+          })
+          toast.success("Tarefa adicionada com sucesso!")
+        },
+        onError: () => {
+          toast.error("Erro ao adicionar tarefa. Por favor, tente novamente.")
+        },
+      }
+    )
   }
 
   const handleCancelClick = () => {
